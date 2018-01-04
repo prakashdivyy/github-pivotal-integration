@@ -7,6 +7,6 @@ export default class Main extends Component {
     }
 
     public async start() {
-        this.logger.info("Starting pivgitissue...");
+        this.logger.info("Starting github-pivotal-integration...");
     }
 }
