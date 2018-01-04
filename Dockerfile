@@ -7,6 +7,7 @@ WORKDIR ${APPDIR}
 
 ADD . ${APPDIR}
 
+RUN npm install
 RUN npm install -g pm2
 RUN npm i -g typescript
 RUN tsc; exit 0
