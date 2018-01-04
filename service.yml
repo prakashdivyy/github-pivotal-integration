@@ -1,0 +1,41 @@
+schema: kata.ai/schema/merapi/1.0
+
+name: ${package.name}
+version: ${package.version}
+
+plugins:
+    - express
+
+components:
+    # main
+    main: Main
+
+    # managers
+    pivotalManager: managers/PivotalManager
+
+    # controllers
+    index: controllers/IndexController
+
+    # express
+    app:
+        type: express
+
+github:
+    secret: ${$GITHUB_SECRET}
+
+pivotal:
+    token: ${$PIVOTAL_TOKEN}
+    projectId: ${$PIVOTAL_PROJECT_ID}
+
+app:
+    host: 0.0.0.0
+    port: ${$PORT}
+
+    router:
+        mergeParams: true
+
+    routes:
+        GET /: index.index
+        POST /: index.webhook
+
+main: main
